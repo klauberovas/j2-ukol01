@@ -1,3 +1,7 @@
+/* ===============================
+   BASE STYLES / RESET
+   =============================== */
+
 html {
     box-sizing: border-box;
 }
@@ -7,24 +11,52 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
-    background-color: #1a1a1a;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
     color: white;
 
+    min-height: 100vh;
+    background-color: #1a1a1a;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
+/* ===============================
+   FLEXBOX COMMON STYLES
+   =============================== */
+/* Common flex container setup */
+.profile,
+.profile__header,
+.profile__main,
+.profile__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.profile__header,
+.profile__main,
+.profile__footer {
+    justify-content: center;
+}
+
+/* ===============================
+   PROFILE CONTAINER
+   =============================== */
 .profile{
-    width: 70vw;
-    margin: 3em;
-    padding: 3em;
+    width: 80vw;
+    margin: 2em;
+    padding: 2em;
     background-color: #1f211f;
     border-radius: 1em;
 }
 
+/* ===============================
+   TYPOGRAPHY
+   =============================== */
 .profile__title,
 .profile__card-title {
     font-family: "Grenze Gotisch", serif;
@@ -33,23 +65,39 @@ body {
     font-style: normal;
 }
 
-p,
-li,
-.profile__tag,
-.profile__footer-info,
-.profile__motto{
-    font-family: "Libre Baskerville", serif;
-    font-weight: 400;
-    font-style: normal;
-    margin: 0;
+/* Title underline */
+.profile__title::after,
+.profile__card-title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #6a0303;
 }
 
-.profile__header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Specific widths for underlines */
+.profile__title::after {
+    width: 50%;
+    margin: 5px auto 0;
+}
+
+.profile__card-title::after {
+    width: 40%;
+    margin: 5px 0 0 10px;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+.profile__header {
     align-items: center;
-    gap: 2em;
+}
+
+.profile__header-info {
+    text-align: center;
+}
+
+.profile__header-info h1 {
+    margin-top: 0;
 }
 
 .profile__avatar{
@@ -61,10 +109,7 @@ li,
 .profile__avatar-img{
     width: 100%;
     height: 100%;
-}
-
-.profile__header-info{
-    text-align: center;
+    border-radius: 1em;
 }
 
 .profile__meta{
@@ -72,3 +117,38 @@ li,
     text-align: right;
 }
 
+
+/* ===============================
+   PROFILE CARD
+   =============================== */
+.profile__card {
+    flex-basis: 100%;
+    background-color: #1a1a1a;
+    padding: 1.5em;
+    border-radius: 2%;
+}
+
+/* ===============================
+   TAGS
+   =============================== */
+.profile__tags {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    color: #a1a0a0;
+    font-style: italic;
+}
+
+.profile__tag {
+    padding: 1em;
+    background-color: #1f211f;
+    border-radius: 3%;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.profile__motto {
+    font-style: italic;
+}
