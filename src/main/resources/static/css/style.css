@@ -34,13 +34,8 @@ body {
 .profile__footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-}
-
-.profile__header,
-.profile__main,
-.profile__footer {
     justify-content: center;
+    gap: 2em;
 }
 
 /* ===============================
@@ -48,7 +43,7 @@ body {
    =============================== */
 .profile{
     width: 80vw;
-    margin: 2em;
+    margin: 2em auto;
     padding: 2em;
     background-color: #1f211f;
     border-radius: 1em;
@@ -114,9 +109,14 @@ body {
 
 .profile__meta{
     font-size: 0.8rem;
-    text-align: right;
+    text-align: center;
 }
 
+@media screen and (min-width: 757px)  {
+    .profile__meta {
+        text-align: center ;
+    }
+}
 
 /* ===============================
    PROFILE CARD
@@ -133,6 +133,7 @@ body {
    =============================== */
 .profile__tags {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1em;
 
